@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .header a {
+          color: #fff;
+          text-decoration: none;
+          display: inline-block;
+          vertical-align: middle;
+          font-family: 'Pacifico', cursive;
+      }
+
+      .header a h2 {
+          margin: 0;
+      }
+
+      .header a.nav-block {
+          margin-left: 30px;
+          font-size: 20px;
+      }
+
+      .contacts {
+            margin: 20px 100px;
+            padding: 30px;
+            background: #e5f4ff;
+            font-family: sans-serif;
+            font-size: 18px;
+      }
+    </style>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+  <div class="contacts">
+<p>Мы рады предложить вам свои услуги и помочь с выбором оправ, солнцезащитных очков и контактных линз. Если у вас есть вопросы или вам требуется консультация, не стесняйтесь обратиться к нам.</p>
+
+    <p>Адрес: г. Москва, ул. Оправная, д. 100</p>
+    <p>Телефон: 8(999)999-99-99</p>
+    <p>Электронная почта: opticstest1@gmail.com</p>
+    <p>График работы: 9:00 - 20:00 каждый день</p>
+
+    <p>Вы также можете связаться с нами через нашу форму обратной связи на сайте. Мы обязательно ответим на все ваши вопросы и предоставим необходимую информацию.</p>
+    <p>Не стесняйтесь обращаться к нам, мы всегда готовы помочь вам с выбором и предоставить лучший сервис. Благодарим вас за выбор нашей оптики!</p>
+  </div>
+</body>
+</html>

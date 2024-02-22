@@ -1,0 +1,70 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <title>User Registration</title>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        html, body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        form {
+            width: 400px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #e5f4ff;
+            font-size: 18px;
+        }
+        button {
+            border: none;
+            background-color: #d1ddff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+
+        .header a {
+          color: #fff;
+          text-decoration: none;
+          display: inline-block;
+          vertical-align: middle;
+          font-family: 'Pacifico', cursive;
+        }
+
+        .header a h2 {
+            margin: 0;
+        }
+
+        .header a.nav-block {
+            margin-left: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<h2>Регистрация</h2>
+<form action="#" th:action="@{/users/register}" th:object="${user}" method="post">
+  <div>
+    <label for="login">Логин:</label>
+    <input type="text" id="login" th:field="*{login}" />
+  </div>
+  <div>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" th:field="*{password}" />
+  </div>
+  <input type="hidden" name="session" th:value="0" />
+  <button type="submit">Зарегистрироваться</button>
+</form>
+</body>
+</html>
+

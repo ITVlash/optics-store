@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Наши товары</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="products">
+        <div class="product-card" th:each="product : ${products}" style="width: 24vw; text-align: center; border-radius: 5px; text-decoration: none; margin-bottom: 40px; background-color: #e5f4ff;">
+            <a th:href="@{'/products/'+*{product.id}}" style="text-decoration: none;">
+                <img th:src="*{product.image}" alt="" style="object-fit: contain; height: 180px; width: 100%; margin-top: 5px;">
+                <h4 th:text="*{product.category}" style="font-family: sans-serif; color: #0044ff;"></h4>
+                <h2 th:text="*{product.name}" style="font-family: sans-serif; color: #00bfff;"></h2>
+            </a>
+            <h3 th:text="*{product.price} + ' рублей'" style="font-family: sans-serif; color: #00efff;"></h3>
+            <form th:action="@{/basket/add-catalog}" method="post" style="margin-bottom: 20px;">
+                <input type="hidden" name="productId" th:value="${product.id}">
+                <input type="number" name="amount" th:value="1" style="width: 40px">
+                <input type="hidden" name="path" th:value="products">
+                <button type="submit" style="background-image: url('/img/basket-img.png'); background-color: transparent; background-size: contain; background-repeat: no-repeat; height: 30px; border: none; cursor: pointer;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-weight: 800;">+</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

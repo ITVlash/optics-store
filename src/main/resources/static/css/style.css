@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Pacifico', cursive;
+}
+
+.header a h2 {
+    margin: 0;
+}
+
+.header a.nav-block {
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.products {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+div.product-card {
+    display: block;
+    margin-bottom: 40px;
+}
